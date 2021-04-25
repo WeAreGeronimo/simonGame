@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+<div class="simonTheGame" id="simonTheGameApp" v-cloak>
+  <div>
+    <div class="infoBar">{{ gameStarted ? `Раунд: ${round}` : aboutGameInfo}}</div>
+    <div :style="forRealHard" :class="['inputArea', isPlayingSeq ? 'disabled' : '']"
+         >
+      <button v-for="(segment, i) in segmentsStates"
+              :class='[`segment_${i + 1}`, classGenerator(i)]'
+              @click="userInput(i)"
+              @mousedown.left="animateClick(i)"
+              @mouseup.left="animateClick(i)"
+              :style="i == styleGenerator(i).contain ? styleGenerator(i).style : ''"
+      >
+      </button>
+    </div>
+  </div>
+  <div class="information">
+    <span v-if="!gameStarted">Уровень сложности:</span>
+    <div class="difficultyLevel" v-if="!gameStarted">
+      <input type="radio" id="easy" name="difficulty" v-model="difficulty" value="1">
+      <label for="easy">Легкий {{difficulty == 1 ? 'и без звука' : ''}}</label>
+      <input v-if="difficulty == 1" type="checkbox" v-model="muted"><br>
+
+      <input type="radio" id="medium" name="difficulty" v-model="difficulty" value="2">
+      <label for="medium">Средний {{difficulty == 2 ? 'и без звука' : ''}}</label>
+      <input v-if="difficulty == 2" type="checkbox" v-model="muted"><br>
+
+      <input type="radio" id="hard" name="difficulty" v-model="difficulty" value="3">
+      <label for="hard">Сложный {{difficulty == 3 ? 'и без звука' : ''}}</label>
+      <input v-if="difficulty == 3" type="checkbox" v-model="muted"><br>
+
+      <input type="radio" id="realHard" name="difficulty" v-model="difficulty" value="4">
+      <label for="realHard">Действительно сложный </label>
+    </div>
+    <button v-if="!gameStarted" @click="startGame">Начать игру</button>
+  </div>
+</div>
+
+
+<script src="https://unpkg.com/vue@next"></script>
+<script src="app.js"></script>
+</body>

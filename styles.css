@@ -1,0 +1,136 @@
+body {
+    background: #dfdbc3;
+}
+
+.simonTheGame {
+    display: flex;
+    width: 650px;
+    margin: 100px auto;
+}
+
+.infoBar {
+    text-align: center;
+    margin: 40px auto;
+    font-family: Arial;
+}
+
+.information {
+    display: flex;
+    width: 200px;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 40px;
+}
+
+.difficultyLevel {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.inputArea {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    width: 400px;
+    height: 400px;
+    gap: 5px;
+}
+
+.segment_1, .segment_2, .segment_3, .segment_4 {
+    outline: none;
+}
+
+.segment_1 {
+    background: #FF5643;
+    border-radius: 100% 0 0 0;
+    border: 3px solid black;
+}
+
+.segment_2 {
+    background: #BEDE15;
+    border-radius: 0 100% 0 0;
+    border: 3px solid black;
+}
+
+.segment_3 {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    background: #FEEF33;
+    border-radius: 0 0 100% 0;
+    border: 3px solid black;
+}
+
+.segment_4 {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    background: #1e90ff;
+    border-radius: 0 0 0 100%;
+    border: 3px solid black;
+}
+
+.segment_1.active  {
+    background: #921000;
+    border: 0;
+    transform: scale(1.1);
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+.segment_2.active  {
+    background: #309619;
+    border: 0;
+    transform: scale(1.1);
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.segment_3.active {
+    background: #8a7f20;
+    border: 0;
+    transform: scale(1.1);
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.segment_4.active {
+    background: #1158a0;
+    border: 0;
+    transform: scale(1.1);
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.segment_1:hover {
+    background: #921000;
+    border: 0;
+}
+
+.segment_2:hover {
+    background: #309619;
+     border: 0;
+}
+
+.segment_3:hover {
+    background: #8a7f20;
+    border: 0;
+}
+
+.segment_4:hover {
+    background: #1158a0;
+    border: 0;
+}
+
+.clicked {
+    transform: scale(0.95);
+}
+
+.disabled {
+    pointer-events: none;
+
+}
+
+[v-cloak] {
+    display: none;
+}
+
+
