@@ -48,7 +48,6 @@ const AppProd = {
             this.isPlayingSeq = true;
             this.addNewValueInSq();
             let playAt = 0;
-            console.log("послед ", this.sequence);
             if (this.difficulty == 4) {
                 if (playAt < this.sequence.length) {
                     setTimeout(() => {
@@ -81,14 +80,12 @@ const AppProd = {
 
             if (playAt < this.sequence.length) {
                 if (value == "on") {
-                    console.log("включить элемент", playAt);
                     this.segmentsStates[this.sequence[playAt]].isActive = true;
                     if (!this.muted) this.soundPlayer(this.sequence[playAt], "play");
                     setTimeout(this.activateSegments, timer, "off", playAt);
                 }
 
                 if (value == "off") {
-                    console.log("выключить элемент", playAt);
                     this.segmentsStates[this.sequence[playAt]].isActive = false;
                     playAt++;
                     setTimeout(this.activateSegments, 500, "on", playAt);
@@ -105,7 +102,6 @@ const AppProd = {
             if (!this.isPlayingSeq && this.gameStarted) {
                 if (!this.muted) this.soundPlayer(value, "play");
                 if (value != this.sequence[this.indexForCompare]) {
-                    console.log("you lose");
                     this.aboutGameInfo = `Вы проиграли! Ваш счет: ${this.sequence
                         .length - 1} `;
                     this.indexForCompare = 0;
