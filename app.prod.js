@@ -1,4 +1,4 @@
-const App = {
+const AppProd = {
     data: () => ({
         difficulty: 1,
         sequence: [],
@@ -34,7 +34,6 @@ const App = {
         ],
         muted: false,
         forRealHard: {
-            massiveIndex: 0,
             segments: [{}, {}, {}, {}]
         }
     }),
@@ -113,6 +112,9 @@ const App = {
                     this.gameStarted = false;
                     this.round = 0;
                     this.sequence = [];
+                    this.forRealHard = {
+                        segments: [{}, {}, {}, {}],
+                    }
                 }
                 if (this.gameStarted) {
                     this.indexForCompare++;
@@ -228,4 +230,4 @@ const App = {
     }
 };
 
-Vue.createApp(App).mount("#simonTheGameApp");
+Vue.createApp(AppProd).mount("#simonTheGameApp");
