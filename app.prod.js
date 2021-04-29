@@ -110,7 +110,7 @@ const AppProd = {
                         .length - 1} `;
                     this.indexForCompare = 0;
                     this.gameStarted = false;
-                    this.round = 0;
+                    this.round = 1;
                     this.sequence = [];
                     this.forRealHard = {
                         segments: [{}, {}, {}, {}],
