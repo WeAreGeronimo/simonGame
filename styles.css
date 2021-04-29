@@ -10,8 +10,9 @@ body {
 
 .infoBar {
     text-align: center;
-    margin: 40px auto;
+    margin: 20px auto;
     font-family: Arial;
+    height: 20px;
 }
 
 .information {

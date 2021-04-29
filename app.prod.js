@@ -11,7 +11,11 @@ const AppProd = {
         ],
         isPlayingSeq: false,
         userAnswer: [],
-        aboutGameInfo: "Выберете уровень сложности и нажмите 'Начать игру'",
+        aboutGameInfo: {
+            common: "Выберете уровень сложности и нажмите 'Начать игру'",
+            isPlayingSeqNow: "Воспроизведение последовательности",
+            isNotPlayingSeqNow: "Повторите!",
+        },
         indexForCompare: 0,
         round: 1,
         audios: [

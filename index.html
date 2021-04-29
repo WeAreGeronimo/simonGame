@@ -10,7 +10,10 @@
 <body>
 <div class="simonTheGame" id="simonTheGameApp" v-cloak>
   <div>
-    <div class="infoBar">{{ gameStarted ? `Раунд: ${round}` : aboutGameInfo}}</div>
+    <div>
+      <div class="infoBar">{{ gameStarted ? `Раунд: ${round}` : aboutGameInfo.common }}</div>
+      <div class="infoBar"> {{ gameStarted ? (isPlayingSeq ? aboutGameInfo.isPlayingSeqNow : aboutGameInfo.isNotPlayingSeqNow) : ''}}</div>
+    </div>
     <div :style="forRealHard" :class="['inputArea', isPlayingSeq ? 'disabled' : '']"
          >
       <button v-for="(segment, i) in segmentsStates"
@@ -46,6 +49,6 @@
 </div>
 
 
-<script src="https://unpkg.com/vue@next"></script>
+<script src="vue.global.prod.js"></script>
 <script src="app.prod.js"></script>
 </body>
