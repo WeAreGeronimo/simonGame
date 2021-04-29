@@ -106,7 +106,7 @@ const AppProd = {
             if (!this.isPlayingSeq && this.gameStarted) {
                 if (!this.muted) this.soundPlayer(value, "play");
                 if (value != this.sequence[this.indexForCompare]) {
-                    this.aboutGameInfo = `Вы проиграли! Ваш счет: ${this.sequence
+                    this.aboutGameInfo.common = `Вы проиграли! Ваш счет: ${this.sequence
                         .length - 1} `;
                     this.indexForCompare = 0;
                     this.gameStarted = false;
